@@ -9,7 +9,11 @@ function onDeviceReady() {
 
 function initializeAndStartJourney() {
   function error(error) {
-    alert(error.message);
+    console.log(
+      "Event onJourneyError received:",
+      error.errorCode,
+      error.message
+    );
   }
 
   const journeyCallback = {
