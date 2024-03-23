@@ -1,0 +1,25 @@
+{
+    "declarations": {
+        "use_frameworks!": {
+            "declaration": "use_frameworks!",
+            "count": 1
+        }
+    },
+    "sources": {
+        "https://cdn.cocoapods.org/": {
+            "source": "https://cdn.cocoapods.org/",
+            "count": 1
+        },
+        "https://github.com/idwise/ios-sdk.git": {
+            "source": "https://github.com/idwise/ios-sdk.git",
+            "count": 1
+        }
+    },
+    "libraries": {
+        "IDWise": {
+            "name": "IDWise",
+            "spec": "4.6.9",
+            "count": 1
+        }
+    }
+}

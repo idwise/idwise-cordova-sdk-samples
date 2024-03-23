@@ -1,0 +1,3 @@
+dependencies {
+  implementation 'com.idwise:android-sdk:4.6.9'
+}
