@@ -15,7 +15,7 @@
   "devDependencies": {
     "cordova-android": "^12.0.1",
     "cordova-ios": "^7.0.1",
-    "idwise-cordova-sdk": "^4.6.0"
+    "idwise-cordova-sdk": "^5.0.0"
   },
   "cordova": {
     "platforms": [

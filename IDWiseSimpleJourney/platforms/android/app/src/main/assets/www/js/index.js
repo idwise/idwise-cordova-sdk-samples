@@ -9,40 +9,33 @@ function onDeviceReady() {
 
 function initializeAndStartJourney() {
   function error(error) {
-    alert(error.message);
+    console.log("Event onJourneyError received:", error.errorCode, error.message);
   }
 
   const journeyCallback = {
-    onJourneyStarted(journeyInfo) {
-      console.log(`Journey Started with id ${journeyInfo.journeyId}`);
+    onJourneyStarted(journeyStartedInfo) {
+      console.log(`Journey Started with id ${journeyStartedInfo.journeyId}`);
     },
-    onJourneyResumed(journeyInfo) {
-      console.log(`Journey Resumed with id ${journeyInfo.journeyId}`);
+    onJourneyResumed(journeyResumedInfo) {
+      console.log(`Journey Resumed with id ${journeyResumedInfo.journeyId}`);
     },
-    onJourneyCompleted(journeyInfo) {
-      console.log(`Journey Fininshed with id ${journeyInfo.journeyId}`);
+    onJourneyCompleted(journeyCompletedInfo) {
+      console.log(`Journey Fininshed with id ${journeyCompletedInfo.journeyId}`);
     },
-    onJourneyCancelled(journeyInfo) {
-      console.log(`Journey Cancelled with id ${journeyInfo.journeyId}`);
+    onJourneyCancelled(journeyCancelledInfo) {
+      console.log(`Journey Cancelled with id ${journeyCancelledInfo.journeyId}`);
     },
     onError(error) {
-      console.log(
-        "Event onJourneyError received:",
-        error.errorCode,
-        error.message
-      );
+      console.log("Event onJourneyError received:", error.code, error.message);
     },
   };
 
-  //setTimeout(() => {
-  var clientKey =
-    "QmFzaWMgWkRJME1qVm1ZelV0WlRZeU1TMDBZV0kxTFdGak5EVXRObVZqT1RGaU9XSXpZakl6T21oUFlubE9VRXRpVVRkMWVubHBjbGhUYld4aU1GcDNOMWcyTkVwWWNrTXlOa1Z4U21oWlNsaz0=";
+  var clientKey = "QmFzaWMgWkRJME1qVm1ZelV0WlRZeU1TMDBZV0kxTFdGak5EVXRObVZqT1RGaU9XSXpZakl6T21oUFlubE9VRXRpVVRkMWVubHBjbGhUYld4aU1GcDNOMWcyTkVwWWNrTXlOa1Z4U21oWlNsaz0=";
   var theme = "DARK"; //available values: LIGHT, DARK, SYSTEM_DEFAULT
   IDWise.initialize(clientKey, theme, error);
 
   var flowId = "d2425fc5-e621-4ab5-ac45-6ec91b9b3b23"; //aka journey definition id
-  var referenceNo = "idw-test-1";
+  var referenceNo = "REFERENCE-NO";
   var locale = "en";
   IDWise.startJourney(flowId, referenceNo, locale, journeyCallback);
-  //}, 500);
 }

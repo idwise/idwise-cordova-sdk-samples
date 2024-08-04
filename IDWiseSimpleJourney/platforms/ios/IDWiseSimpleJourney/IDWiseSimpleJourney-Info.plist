@@ -32,8 +32,6 @@
 	<string>CDVLaunchScreen</string>
 	<key>UIRequiresFullScreen</key>
 	<true/>
-	<key>NSCameraUsageDescription</key>
-	<string>Camera Permission required for Capturing Document</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

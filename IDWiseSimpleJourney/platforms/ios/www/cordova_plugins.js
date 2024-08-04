@@ -10,6 +10,6 @@ cordova.define('cordova/plugin_list', function(require, exports, module) {
     }
   ];
   module.exports.metadata = {
-    "idwise-cordova-sdk": "4.6.0"
+    "idwise-cordova-sdk": "4.6.9"
   };
 });

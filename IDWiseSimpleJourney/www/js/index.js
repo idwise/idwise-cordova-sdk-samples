@@ -9,32 +9,24 @@ function onDeviceReady() {
 
 function initializeAndStartJourney() {
   function error(error) {
-    console.log(
-      "Event onJourneyError received:",
-      error.errorCode,
-      error.message
-    );
+    console.log("Event onJourneyError received:", error.errorCode, error.message);
   }
 
   const journeyCallback = {
-    onJourneyStarted(journeyInfo) {
-      console.log(`Journey Started with id ${journeyInfo.journeyId}`);
+    onJourneyStarted(journeyStartedInfo) {
+      console.log(`Journey Started with id ${journeyStartedInfo.journeyId}`);
     },
-    onJourneyResumed(journeyInfo) {
-      console.log(`Journey Resumed with id ${journeyInfo.journeyId}`);
+    onJourneyResumed(journeyResumedInfo) {
+      console.log(`Journey Resumed with id ${journeyResumedInfo.journeyId}`);
     },
-    onJourneyCompleted(journeyInfo) {
-      console.log(`Journey Fininshed with id ${journeyInfo.journeyId}`);
+    onJourneyCompleted(journeyCompletedInfo) {
+      console.log(`Journey Fininshed with id ${journeyCompletedInfo.journeyId}`);
     },
-    onJourneyCancelled(journeyInfo) {
-      console.log(`Journey Cancelled with id ${journeyInfo.journeyId}`);
+    onJourneyCancelled(journeyCancelledInfo) {
+      console.log(`Journey Cancelled with id ${journeyCancelledInfo.journeyId}`);
     },
     onError(error) {
-      console.log(
-        "Event onJourneyError received:",
-        error.errorCode,
-        error.message
-      );
+      console.log("Event onJourneyError received:", error.code, error.message);
     },
   };
 
