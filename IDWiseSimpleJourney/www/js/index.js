@@ -9,7 +9,7 @@ function onDeviceReady() {
 
 function initializeAndStartJourney() {
   function error(error) {
-    console.log("Event onJourneyError received:", error.errorCode, error.message);
+    console.log("Event onJourneyError received:", error.code, error.message);
   }
 
   const journeyCallback = {
@@ -32,10 +32,10 @@ function initializeAndStartJourney() {
 
   var clientKey = "YOUR-CLIENT-KEY";
   var theme = "DARK"; //available values: LIGHT, DARK, SYSTEM_DEFAULT
-  IDWise.initialize(clientKey, theme, error);
+  IDWiseDynamic.initialize(clientKey, theme, error);
 
   var flowId = "FLOW-ID"; //aka journey definition id
   var referenceNo = "REFERENCE-NO";
   var locale = "en";
-  IDWise.startJourney(flowId, referenceNo, locale, journeyCallback);
+  IDWiseDynamic.startJourney(flowId, referenceNo, locale, journeyCallback);
 }

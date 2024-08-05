@@ -32,20 +32,6 @@ import _SwiftConcurrencyShims
 @_hasMissingDesignatedInitializers final public class InitializeSDKContainer {
   @objc deinit
 }
-public protocol IDWiseSDKJourneyDelegate {
-  func JourneyStarted(journeyID: Swift.String)
-  func onJourneyResumed(journeyID: Swift.String)
-  func JourneyFinished()
-  func JourneyCancelled()
-  func onError(error: IDWiseSDK.IDWiseSDKError)
-}
-public protocol IDWiseSDKStepDelegate {
-  func onStepCaptured(stepId: Swift.Int, capturedImage: UIKit.UIImage?)
-  func onStepResult(stepId: Swift.Int, stepResult: IDWiseSDK.StepResult?)
-  func onStepConfirmed(stepId: Swift.String)
-  func onStepCancelled(stepId: Swift.String)
-  func onStepSkipped(stepId: Swift.String)
-}
 public enum IDWiseSDKTheme {
   case light, dark, systemDefault
   public static func == (a: IDWiseSDK.IDWiseSDKTheme, b: IDWiseSDK.IDWiseSDKTheme) -> Swift.Bool
@@ -54,20 +40,26 @@ public enum IDWiseSDKTheme {
     get
   }
 }
-@_hasMissingDesignatedInitializers public class IDWise {
+@_hasMissingDesignatedInitializers public class IDWiseInternal {
   @objc deinit
 }
-extension IDWiseSDK.IDWise {
-  public class func startJourney(journeyDefinitionId: Swift.String, referenceNumber: Swift.String = "", locale: Swift.String = "", journeyDelegate: any IDWiseSDK.IDWiseSDKJourneyDelegate)
-  public class func startDynamicJourney(journeyDefinitionId: Swift.String, referenceNumber: Swift.String = "", locale: Swift.String = "", journeyDelegate: any IDWiseSDK.IDWiseSDKJourneyDelegate, stepDelegate: any IDWiseSDK.IDWiseSDKStepDelegate)
-  public class func resumeDynamicJourney(journeyDefinitionId: Swift.String, journeyId: Swift.String, locale: Swift.String = "", journeyDelegate: any IDWiseSDK.IDWiseSDKJourneyDelegate, stepDelegate: any IDWiseSDK.IDWiseSDKStepDelegate)
+@_inheritsConvenienceInitializers public class IDWise : IDWiseSDK.IDWiseInternal {
+  public class func startJourney(flowId: Swift.String, referenceNumber: Swift.String = "", locale: Swift.String = "", applicantDetails: [Swift.String : Swift.String]?, journeyDelegate: any IDWiseSDK.IDWiseSDKJourneyDelegate)
+  public class func resumeJourney(flowId: Swift.String, journeyId: Swift.String, locale: Swift.String = "", journeyDelegate: any IDWiseSDK.IDWiseSDKJourneyDelegate)
+  public class func initialize(clientKey: Swift.String, theme: IDWiseSDK.IDWiseSDKTheme, onError: @escaping (IDWiseSDK.IDWiseSDKError?) -> ())
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class IDWiseDynamic : IDWiseSDK.IDWiseInternal {
+  public class func startJourney(flowId: Swift.String, referenceNumber: Swift.String = "", locale: Swift.String = "", applicantDetails: [Swift.String : Swift.String]?, journeyDelegate: any IDWiseSDK.IDWiseSDKJourneyDelegate, stepDelegate: any IDWiseSDK.IDWiseSDKStepDelegate)
+  public class func resumeJourney(flowId: Swift.String, journeyId: Swift.String, locale: Swift.String = "", journeyDelegate: any IDWiseSDK.IDWiseSDKJourneyDelegate, stepDelegate: any IDWiseSDK.IDWiseSDKStepDelegate)
   public class func startStep(stepId: Swift.String)
   public class func startStepFromFileUpload(stepId: Swift.String, data: Foundation.Data)
   public class func initialize(clientKey: Swift.String, theme: IDWiseSDK.IDWiseSDKTheme, onError: @escaping (IDWiseSDK.IDWiseSDKError?) -> ())
   public class func getJourneySummary(callback: @escaping ((IDWiseSDK.JourneySummary?, IDWiseSDK.IDWiseSDKError?) -> ()))
   public class func unloadSDK()
-  public class func finishDynamicJourney()
+  public class func finishJourney()
   public class func skipStep(stepId: Swift.String)
+  @objc deinit
 }
 public protocol NetworkConfigurable {
   var baseURL: Foundation.URL { get }
@@ -93,6 +85,14 @@ extension IDWiseSDK.MenuWidgetView : UIKit.UITableViewDelegate, UIKit.UITableVie
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, viewForHeaderInSection section: Swift.Int) -> UIKit.UIView?
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
   @_Concurrency.MainActor(unsafe) @objc dynamic public func tableView(_ tableView: UIKit.UITableView, heightForRowAt indexPath: Foundation.IndexPath) -> CoreFoundation.CGFloat
+}
+public struct ErrorCodes {
+}
+public struct IDWiseSDKError : Swift.Codable {
+  public let code: Swift.String
+  public let message: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 public enum LoaderPosition {
   case middle
@@ -125,16 +125,53 @@ public struct ExtractedFields : Swift.Equatable {
   public let fullName: IDWiseSDK.FieldValue?, fullNameNative: IDWiseSDK.FieldValue?, personalNumber: IDWiseSDK.FieldValue?
   public static func == (a: IDWiseSDK.ExtractedFields, b: IDWiseSDK.ExtractedFields) -> Swift.Bool
 }
-public struct FieldValue : Swift.Equatable {
+public struct FieldValue : Swift.Equatable, Swift.Codable {
   public let value: Swift.String?
   public static func == (a: IDWiseSDK.FieldValue, b: IDWiseSDK.FieldValue) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
-public struct NFCResult {
-  public let facePhoto: UIKit.UIImage?
+public struct NFCResult : Swift.Codable {
+  public let facePhoto: Foundation.Data?
   public var extractedFields: [Swift.String : IDWiseSDK.FieldValue]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
 }
 extension UIKit.UIFont {
   public static let loadCustomFonts: ()
+}
+public protocol IDWiseSDKJourneyDelegate {
+  func onJourneyStarted(journeyStartedInfo: IDWiseSDK.JourneyStartedInfo)
+  func onJourneyResumed(journeyResumedInfo: IDWiseSDK.JourneyResumedInfo)
+  func onJourneyCompleted(journeyCompletedInfo: IDWiseSDK.JourneyCompletedInfo)
+  func onJourneyCancelled(journeyCancelledInfo: IDWiseSDK.JourneyCancelledInfo)
+  func onError(error: IDWiseSDK.IDWiseSDKError)
+}
+public struct JourneyStartedInfo : Swift.Codable {
+  public let journeyId: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct JourneyResumedInfo : Swift.Codable {
+  public let journeyId: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct JourneyCancelledInfo : Swift.Codable {
+  public let journeyId: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct JourneyCompletedInfo : Swift.Codable {
+  public let journeyId: Swift.String
+  public let isSuccessful: Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ApplicantDetailsKeys {
+  public static let FULL_NAME: Swift.String
+  public static let BIRTH_DATE: Swift.String
+  public static let SEX: Swift.String
 }
 public enum NetworkError : Swift.Error {
   case error(statusCode: Swift.Int, data: Foundation.Data?)
@@ -236,11 +273,32 @@ public class RawDataResponseDecoder : IDWiseSDK.ResponseDecoder {
   public func decode<T>(_ data: Foundation.Data) throws -> T where T : Swift.Decodable
   @objc deinit
 }
-public struct ErrorCodes {
+public protocol IDWiseSDKStepDelegate {
+  func onStepCaptured(stepCapturedInfo: IDWiseSDK.StepCapturedInfo)
+  func onStepResult(stepResultInfo: IDWiseSDK.StepResultInfo)
+  func onStepCancelled(stepCancelledInfo: IDWiseSDK.StepCancelledInfo)
+  func onStepSkipped(stepSkippedInfo: IDWiseSDK.StepSkippedInfo)
 }
-public struct IDWiseSDKError {
-  public let code: Swift.Int
-  public let message: Swift.String
+public struct StepSkippedInfo : Swift.Codable {
+  public let stepId: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct StepCancelledInfo : Swift.Codable {
+  public let stepId: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct StepResultInfo : Swift.Codable {
+  public let stepId: Swift.String
+  public let stepResult: IDWiseSDK.StepResult?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct StepCapturedInfo {
+  public let stepId: Swift.String
+  public let originalImage: UIKit.UIImage?
+  public let croppedImage: UIKit.UIImage?
 }
 @_hasMissingDesignatedInitializers public class UIUtilities {
   public static func addCircle(atPoint point: CoreFoundation.CGPoint, to view: UIKit.UIView, color: UIKit.UIColor, radius: CoreFoundation.CGFloat)
@@ -365,7 +423,7 @@ extension IDWiseSDK.Requestable {
   public func urlRequest(with config: any IDWiseSDK.NetworkConfigurable) throws -> Foundation.URLRequest
 }
 public enum Model : Swift.String {
-  case simulator, iPad2, iPad3, iPad4, iPadAir, iPadAir2, iPadAir3, iPadAir4, iPad5, iPad6, iPad7, iPad8, iPad9, iPadMini, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadMini6, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro2_11, iPadPro3_11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPadPro4_12_9, iPadPro5_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, iPhone12Mini, iPhone12, iPhone12Pro, iPhone12ProMax, iPhone13Mini, iPhone13, iPhone13Pro, iPhone13ProMax, unrecognized
+  case simulator, iPad2, iPad3, iPad4, iPadAir, iPadAir2, iPadAir3, iPadAir4, iPad5, iPad6, iPad7, iPad8, iPad9, iPadMini, iPadMini2, iPadMini3, iPadMini4, iPadMini5, iPadMini6, iPadPro9_7, iPadPro10_5, iPadPro11, iPadPro2_11, iPadPro3_11, iPadPro12_9, iPadPro2_12_9, iPadPro3_12_9, iPadPro4_12_9, iPadPro5_12_9, iPhone4, iPhone4S, iPhone5, iPhone5S, iPhone5C, iPhone6, iPhone6Plus, iPhone6S, iPhone6SPlus, iPhoneSE, iPhone7, iPhone7Plus, iPhone8, iPhone8Plus, iPhoneX, iPhoneXS, iPhoneXSMax, iPhoneXR, iPhone11, iPhone11Pro, iPhone11ProMax, iPhoneSE2, iPhone12Mini, iPhone12, iPhone12Pro, iPhone12ProMax, iPhone13Mini, iPhone13, iPhone13Pro, iPhone13ProMax, iPhoneSE3, iPhone14, iPhone14Plus, iPhone14Pro, iPhone14ProMax, iPhone15, iPhone15Plus, iPhone15Pro, iPhone15ProMax, unrecognized
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -386,6 +444,31 @@ public struct JourneyDefinitionDTO : Swift.Codable {
 }
 public struct JourneyResultDTO : Swift.Codable {
   public var completedSteps: Swift.Int?
+  public let interimRuleAssessment: IDWiseSDK.InterimRuleAssessment?
+  public var interimRuleDetails: [Swift.String : IDWiseSDK.RuleDetail]?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum InterimRuleAssessment : Swift.String, Swift.Codable {
+  case Passed
+  case Failed
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum InterimRuleResult : Swift.String, Swift.Codable {
+  case Passed
+  case Failed
+  case CouldNotApply
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct RuleDetail : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -396,15 +479,14 @@ public struct DocumentRecognition : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct JourneySummary : Swift.Codable {
+public struct JourneySummaryInternal : Swift.Codable {
   public let journeyId: Swift.String
   public let isCompleted: Swift.Bool
-  public var stepSummaries: [IDWiseSDK.JourneySummary.StepSummary]
+  public var stepSummaries: [IDWiseSDK.JourneySummaryInternal.StepSummary]
   public let journeyResult: IDWiseSDK.JourneyResultDTO?
   public let journeyDefinition: IDWiseSDK.JourneyDefinitionDTO?
   public struct StepSummary : Swift.Codable {
-    public let definition: IDWiseSDK.JourneySummary.StepDefinition
-    public var result: IDWiseSDK.StepResult?
+    public let definition: IDWiseSDK.JourneySummaryInternal.StepDefinition
     public let recognition: IDWiseSDK.DocumentRecognition?
     public func encode(to encoder: any Swift.Encoder) throws
     public init(from decoder: any Swift.Decoder) throws
@@ -422,22 +504,41 @@ public struct JourneySummary : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct StepResult : Swift.Codable, Swift.Equatable {
-  public let hasPassedRules: Swift.Bool?
-  public let documentHasBack: Swift.Bool?
-  public let isConcluded: Swift.Bool?
-  public let status: Swift.String?, errorUserFeedbackCode: Swift.String?, errorUserFeedbackTitle: Swift.String?, errorUserFeedbackDetails: Swift.String?
-  public var extractedFields: [Swift.String : IDWiseSDK.FieldValue]
-  public var nfcResult: IDWiseSDK.NFCResult?
-  public var recognition: IDWiseSDK.DocumentRecognition?
-  public let error_user_feedback_bullets: [Swift.String]?
-  public let attempt_id: Swift.String?
-  public static func == (lhs: IDWiseSDK.StepResult, rhs: IDWiseSDK.StepResult) -> Swift.Bool
+public struct NFCConfigurationDTO : Swift.Codable {
+  public let performNFC: Swift.Bool?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct NFCConfigurationDTO : Swift.Codable {
-  public let performNFC: Swift.Bool?
+public struct JourneySummary : Swift.Codable {
+  public var isCompleted: Swift.Bool
+  public var journeyId: Swift.String
+  public var stepSummaries: [IDWiseSDK.JourneySummary.StepSummary]?
+  public var journeyResult: IDWiseSDK.JourneySummary.JourneyResult?
+  public struct StepSummary : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct StepDefinition : Swift.Codable {
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public struct JourneyResult : Swift.Codable {
+    public var completedSteps: Swift.Int?
+    public let interimRuleAssessment: IDWiseSDK.InterimRuleAssessment?
+    public var interimRuleDetails: [Swift.String : IDWiseSDK.RuleDetail]?
+    public func encode(to encoder: any Swift.Encoder) throws
+    public init(from decoder: any Swift.Decoder) throws
+  }
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct StepResult : Swift.Codable {
+  public let hasPassedRules: Swift.Bool?
+  public let isConcluded: Swift.Bool?
+  public let status: Swift.String?, errorUserFeedbackCode: Swift.String?, errorUserFeedbackTitle: Swift.String?, errorUserFeedbackDetails: Swift.String?
+  public var extractedFields: [Swift.String : IDWiseSDK.FieldValue]?
+  public var nfcResult: IDWiseSDK.NFCResult?
+  public var recognition: IDWiseSDK.DocumentRecognition?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -467,3 +568,9 @@ extension IDWiseSDK.BodyRequestType : Swift.Hashable {}
 extension IDWiseSDK.Model : Swift.Equatable {}
 extension IDWiseSDK.Model : Swift.Hashable {}
 extension IDWiseSDK.Model : Swift.RawRepresentable {}
+extension IDWiseSDK.InterimRuleAssessment : Swift.Equatable {}
+extension IDWiseSDK.InterimRuleAssessment : Swift.Hashable {}
+extension IDWiseSDK.InterimRuleAssessment : Swift.RawRepresentable {}
+extension IDWiseSDK.InterimRuleResult : Swift.Equatable {}
+extension IDWiseSDK.InterimRuleResult : Swift.Hashable {}
+extension IDWiseSDK.InterimRuleResult : Swift.RawRepresentable {}

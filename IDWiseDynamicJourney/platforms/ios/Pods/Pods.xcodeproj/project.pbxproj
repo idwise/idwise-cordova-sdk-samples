@@ -1,0 +1,549 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		5235646A6BE896BE17C52F451295B1CC /* IDWise */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 60C1C2563761F47B85F36F83202D93D9 /* Build configuration list for PBXAggregateTarget "IDWise" */;
+			buildPhases = (
+				2D5C1DCAED5BC38E3FF13A5CBEA16C34 /* [CP] Copy XCFrameworks */,
+			);
+			dependencies = (
+			);
+			name = IDWise;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		62364F33F7A534896A07776576D9A706 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		8499F0EDBBAB76956A77A1112C9247E1 /* Pods-IDWiseDynamicJourney-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A98321909DACEC5DFE62490248B5BA41 /* Pods-IDWiseDynamicJourney-dummy.m */; };
+		E75FBC06B5B4D00CC0346692131A8868 /* Pods-IDWiseDynamicJourney-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2CBD45FC0D45FA60C14391BFFB69739C /* Pods-IDWiseDynamicJourney-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA9ACEB88EEDE3DA8763AA712E2844EB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5235646A6BE896BE17C52F451295B1CC;
+			remoteInfo = IDWise;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		03976A663EF1BDD98ABCB3DDD8E855DE /* Pods-IDWiseDynamicJourney */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-IDWiseDynamicJourney"; path = Pods_IDWiseDynamicJourney.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ADCD58DE568D03CB36D6121540BDD98 /* Pods-IDWiseDynamicJourney-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IDWiseDynamicJourney-acknowledgements.plist"; sourceTree = "<group>"; };
+		235439ED8E38B1E1B3775C0F45A9BC19 /* Pods-IDWiseDynamicJourney.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-IDWiseDynamicJourney.modulemap"; sourceTree = "<group>"; };
+		2CBD45FC0D45FA60C14391BFFB69739C /* Pods-IDWiseDynamicJourney-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-IDWiseDynamicJourney-umbrella.h"; sourceTree = "<group>"; };
+		4D830E950DE84B7EE83AA3E84505438E /* Pods-IDWiseDynamicJourney-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-IDWiseDynamicJourney-frameworks.sh"; sourceTree = "<group>"; };
+		6553FEEC7785F573265AEB78D46CE95C /* Pods-IDWiseDynamicJourney-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-IDWiseDynamicJourney-Info.plist"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		9BEB115EE4DA0FA545ACEB2207C277F4 /* Pods-IDWiseDynamicJourney.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IDWiseDynamicJourney.debug.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A98321909DACEC5DFE62490248B5BA41 /* Pods-IDWiseDynamicJourney-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-IDWiseDynamicJourney-dummy.m"; sourceTree = "<group>"; };
+		CBCCBBDCC0FB8B9763CB90364402E803 /* IDWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IDWise.debug.xcconfig; sourceTree = "<group>"; };
+		CDB68ACCDA462113BA1BD25A5020ECC7 /* Pods-IDWiseDynamicJourney-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-IDWiseDynamicJourney-acknowledgements.markdown"; sourceTree = "<group>"; };
+		D648418F0E6C7E6EA15611D124BABE65 /* Pods-IDWiseDynamicJourney.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-IDWiseDynamicJourney.release.xcconfig"; sourceTree = "<group>"; };
+		E1B0D9A610BA39349BC4272C96D24E54 /* IDWise.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = IDWise.release.xcconfig; sourceTree = "<group>"; };
+		EEB45FC884D38DAF332295021C1F5A8B /* IDWise-xcframeworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "IDWise-xcframeworks.sh"; sourceTree = "<group>"; };
+		FD42FD382E36FC07B46767B4CAAF2033 /* IDWiseSDK.xcframework */ = {isa = PBXFileReference; includeInIndex = 1; path = IDWiseSDK.xcframework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C389DE47FEAA0AD4434576F5BB2D947F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				62364F33F7A534896A07776576D9A706 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0807F1C245C1DA27EE18FAFE468C889E /* IDWise */ = {
+			isa = PBXGroup;
+			children = (
+				EAFC70C552573EDA61420165C96E9C6E /* Frameworks */,
+				7900C401724E6D035DC25F53D1E832EF /* Support Files */,
+			);
+			name = IDWise;
+			path = IDWise;
+			sourceTree = "<group>";
+		};
+		482B2455C476C9CEB0E23D0D6D8471A6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E78007B4466A5B8D517D2D427C99E286 /* Pods-IDWiseDynamicJourney */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		7900C401724E6D035DC25F53D1E832EF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EEB45FC884D38DAF332295021C1F5A8B /* IDWise-xcframeworks.sh */,
+				CBCCBBDCC0FB8B9763CB90364402E803 /* IDWise.debug.xcconfig */,
+				E1B0D9A610BA39349BC4272C96D24E54 /* IDWise.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/IDWise";
+			sourceTree = "<group>";
+		};
+		A3CA2EB376E3C3FC26A880B961A88736 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				03976A663EF1BDD98ABCB3DDD8E855DE /* Pods-IDWiseDynamicJourney */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				DF55A636A12B28D2AD0BFE1A04F88DD0 /* Pods */,
+				A3CA2EB376E3C3FC26A880B961A88736 /* Products */,
+				482B2455C476C9CEB0E23D0D6D8471A6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DF55A636A12B28D2AD0BFE1A04F88DD0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0807F1C245C1DA27EE18FAFE468C889E /* IDWise */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E78007B4466A5B8D517D2D427C99E286 /* Pods-IDWiseDynamicJourney */ = {
+			isa = PBXGroup;
+			children = (
+				235439ED8E38B1E1B3775C0F45A9BC19 /* Pods-IDWiseDynamicJourney.modulemap */,
+				CDB68ACCDA462113BA1BD25A5020ECC7 /* Pods-IDWiseDynamicJourney-acknowledgements.markdown */,
+				0ADCD58DE568D03CB36D6121540BDD98 /* Pods-IDWiseDynamicJourney-acknowledgements.plist */,
+				A98321909DACEC5DFE62490248B5BA41 /* Pods-IDWiseDynamicJourney-dummy.m */,
+				4D830E950DE84B7EE83AA3E84505438E /* Pods-IDWiseDynamicJourney-frameworks.sh */,
+				6553FEEC7785F573265AEB78D46CE95C /* Pods-IDWiseDynamicJourney-Info.plist */,
+				2CBD45FC0D45FA60C14391BFFB69739C /* Pods-IDWiseDynamicJourney-umbrella.h */,
+				9BEB115EE4DA0FA545ACEB2207C277F4 /* Pods-IDWiseDynamicJourney.debug.xcconfig */,
+				D648418F0E6C7E6EA15611D124BABE65 /* Pods-IDWiseDynamicJourney.release.xcconfig */,
+			);
+			name = "Pods-IDWiseDynamicJourney";
+			path = "Target Support Files/Pods-IDWiseDynamicJourney";
+			sourceTree = "<group>";
+		};
+		EAFC70C552573EDA61420165C96E9C6E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FD42FD382E36FC07B46767B4CAAF2033 /* IDWiseSDK.xcframework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4990DA3A329EEC3DF2C1033E9AAE23C1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E75FBC06B5B4D00CC0346692131A8868 /* Pods-IDWiseDynamicJourney-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		6659D21725D994B2A485FC6CF8B6E2DC /* Pods-IDWiseDynamicJourney */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F3DCB156D78B5D979EE4AB29A8077A72 /* Build configuration list for PBXNativeTarget "Pods-IDWiseDynamicJourney" */;
+			buildPhases = (
+				4990DA3A329EEC3DF2C1033E9AAE23C1 /* Headers */,
+				D926074FE9E592D9E58308B7855562C4 /* Sources */,
+				C389DE47FEAA0AD4434576F5BB2D947F /* Frameworks */,
+				38B0A2A22CEA23CCE9D9A1B0467EED02 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB02DF84072779EADF39906B455705F2 /* PBXTargetDependency */,
+			);
+			name = "Pods-IDWiseDynamicJourney";
+			productName = Pods_IDWiseDynamicJourney;
+			productReference = 03976A663EF1BDD98ABCB3DDD8E855DE /* Pods-IDWiseDynamicJourney */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 11.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = A3CA2EB376E3C3FC26A880B961A88736 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5235646A6BE896BE17C52F451295B1CC /* IDWise */,
+				6659D21725D994B2A485FC6CF8B6E2DC /* Pods-IDWiseDynamicJourney */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		38B0A2A22CEA23CCE9D9A1B0467EED02 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D5C1DCAED5BC38E3FF13A5CBEA16C34 /* [CP] Copy XCFrameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/IDWise/IDWise-xcframeworks-input-files.xcfilelist",
+			);
+			name = "[CP] Copy XCFrameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/IDWise/IDWise-xcframeworks-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/IDWise/IDWise-xcframeworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D926074FE9E592D9E58308B7855562C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8499F0EDBBAB76956A77A1112C9247E1 /* Pods-IDWiseDynamicJourney-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		EB02DF84072779EADF39906B455705F2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = IDWise;
+			target = 5235646A6BE896BE17C52F451295B1CC /* IDWise */;
+			targetProxy = AA9ACEB88EEDE3DA8763AA712E2844EB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2B9E26EAE2CD392AD762421F663075A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4A6D628D6C687E9D3D965BC0650E8312 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BEB115EE4DA0FA545ACEB2207C277F4 /* Pods-IDWiseDynamicJourney.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-IDWiseDynamicJourney/Pods-IDWiseDynamicJourney-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-IDWiseDynamicJourney/Pods-IDWiseDynamicJourney.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		9E6FDF03D04AFFAB9D3AE8350AE7B181 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E1B0D9A610BA39349BC4272C96D24E54 /* IDWise.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		EEA77442256BC2805371BC595ACE823D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D648418F0E6C7E6EA15611D124BABE65 /* Pods-IDWiseDynamicJourney.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-IDWiseDynamicJourney/Pods-IDWiseDynamicJourney-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-IDWiseDynamicJourney/Pods-IDWiseDynamicJourney.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		FC7D0278D34418EA0F6229446DA2E153 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBCCBBDCC0FB8B9763CB90364402E803 /* IDWise.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2B9E26EAE2CD392AD762421F663075A1 /* Debug */,
+				63FAF33E1C55B71A5F5A8B3CC8749F99 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60C1C2563761F47B85F36F83202D93D9 /* Build configuration list for PBXAggregateTarget "IDWise" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FC7D0278D34418EA0F6229446DA2E153 /* Debug */,
+				9E6FDF03D04AFFAB9D3AE8350AE7B181 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F3DCB156D78B5D979EE4AB29A8077A72 /* Build configuration list for PBXNativeTarget "Pods-IDWiseDynamicJourney" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4A6D628D6C687E9D3D965BC0650E8312 /* Debug */,
+				EEA77442256BC2805371BC595ACE823D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

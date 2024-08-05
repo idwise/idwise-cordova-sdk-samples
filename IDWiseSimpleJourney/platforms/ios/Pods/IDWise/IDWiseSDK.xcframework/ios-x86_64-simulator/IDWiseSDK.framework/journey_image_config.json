@@ -9,6 +9,7 @@
   "journey_document_selfie_mcs_try_again": "one_documents_one_selfie",
   "journey_document_selfie_mcs_resume_sequential": "one_documents_one_selfie",
   "journey_document_selfie_mcs_invalid": "one_documents_one_selfie_invalid",
+  "journey_document_selfie_mcs_invalid_resume_journey": "one_documents_one_selfie_invalid",
   "journey_two_documents_selfie_mcs": "two_documents_one_selfie",
   "journey_two_documents_opt_selfie_mcs": "two_documents_one_selfie",
   "journey_document_mcs": "document",
@@ -22,74 +23,74 @@
   "journey_selfie_opt_two_documents_opt_mcs": "one_selfie_two_documents",
   "selfie": {
     "0": [
-      "SELFIE"
+      "selfie"
     ]
   },
   "document": {
     "0": [
-      "ID_FRONT"
+      "dl_front"
     ],
     "1": [
-      "ID_BACK"
+      "dl_back"
     ]
   },
   "one_documents_one_selfie": {
     "0": [
-      "ID_FRONT"
+      "dl_front"
     ],
     "1": [
-      "ID_BACK"
+      "dl_back"
     ],
     "2": [
-      "SELFIE"
+      "selfie"
     ]
   },
   "one_documents_one_selfie_invalid": {
     "0": [
-      "Invalid_Doc",
-      "ID_FRONT"
+      "invalid_document",
+      "dl_front"
     ],
     "1": [
-      "Invalid_Doc",
-      "ID_BACK"
+      "invalid_document",
+      "dl_back"
     ],
     "2": [
-      "Invalid_Selfie",
-      "SELFIE"
+      "invalid_selfie",
+      "selfie"
     ]
   },
   "two_documents_one_selfie": {
     "0": [
-      "ID_FRONT"
+      "dl_front"
     ],
     "1": [
-      "ID_BACK"
+      "dl_back"
     ],
     "2": [
-      "ID_FRONT"
+      "dl_front"
     ],
     "3": [
-      "ID_BACK"
+      "dl_back"
     ],
     "4": [
-      "SELFIE"
+      "selfie"
     ]
   },
   "one_selfie_two_documents": {
     "0": [
-      "SELFIE"
+      "selfie"
     ],
     "1": [
-      "ID_FRONT"
+      "dl_front"
     ],
     "2": [
-      "ID_BACK"
+      "dl_back"
     ],
     "3": [
-      "ID_FRONT"
+      "dl_front"
     ],
     "4": [
-      "ID_BACK"
+      "dl_back"
     ]
   }
 }

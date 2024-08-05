@@ -1,0 +1,51 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "res/xml/config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<preference name=\"GradlePluginKotlinEnabled\" value=\"true\" />",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"IDWiseCordovaSDK\"><param name=\"android-package\" value=\"idwise_cordova_sdk.IDWiseCordovaSDK\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "idwise-cordova-sdk": {
+      "PACKAGE_NAME": "com.idwise.cordova.simple.demo"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "idwise-cordova-sdk.IDWiseCordovaSDK",
+      "file": "plugins/idwise-cordova-sdk/www/IDWiseCordovaSDK.js",
+      "pluginId": "idwise-cordova-sdk",
+      "clobbers": [
+        "IDWise"
+      ]
+    },
+    {
+      "id": "idwise-cordova-sdk.IDWiseCordovaDynamicSDK",
+      "file": "plugins/idwise-cordova-sdk/www/IDWiseDynamicCordovaSDK.js",
+      "pluginId": "idwise-cordova-sdk",
+      "clobbers": [
+        "IDWiseDynamic"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "idwise-cordova-sdk": "4.6.9"
+  }
+}

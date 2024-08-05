@@ -5,5 +5,5 @@ platform :ios, '12.0'
 use_frameworks!
 target 'IDWiseSimpleJourney' do
 	project 'IDWiseSimpleJourney.xcodeproj'
-	pod 'IDWise', '4.6.9'
+	pod 'IDWise', '5.0.0'
 end

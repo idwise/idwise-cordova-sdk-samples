@@ -46,6 +46,14 @@
       "clobbers": [
         "IDWise"
       ]
+    },
+    {
+      "id": "idwise-cordova-sdk.IDWiseCordovaDynamicSDK",
+      "file": "plugins/idwise-cordova-sdk/www/IDWiseDynamicCordovaSDK.js",
+      "pluginId": "idwise-cordova-sdk",
+      "clobbers": [
+        "IDWiseDynamic"
+      ]
     }
   ],
   "plugin_metadata": {

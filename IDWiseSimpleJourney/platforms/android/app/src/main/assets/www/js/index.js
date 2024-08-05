@@ -9,7 +9,7 @@ function onDeviceReady() {
 
 function initializeAndStartJourney() {
   function error(error) {
-    console.log("Event onJourneyError received:", error.errorCode, error.message);
+    console.log("Event onJourneyError received:", error.code, error.message);
   }
 
   const journeyCallback = {
@@ -32,10 +32,10 @@ function initializeAndStartJourney() {
 
   var clientKey = "QmFzaWMgWkRJME1qVm1ZelV0WlRZeU1TMDBZV0kxTFdGak5EVXRObVZqT1RGaU9XSXpZakl6T21oUFlubE9VRXRpVVRkMWVubHBjbGhUYld4aU1GcDNOMWcyTkVwWWNrTXlOa1Z4U21oWlNsaz0=";
   var theme = "DARK"; //available values: LIGHT, DARK, SYSTEM_DEFAULT
-  IDWise.initialize(clientKey, theme, error);
+  IDWiseDynamic.initialize(clientKey, theme, error);
 
   var flowId = "d2425fc5-e621-4ab5-ac45-6ec91b9b3b23"; //aka journey definition id
   var referenceNo = "REFERENCE-NO";
   var locale = "en";
-  IDWise.startJourney(flowId, referenceNo, locale, journeyCallback);
+  IDWiseDynamic.startJourney(flowId, referenceNo, locale, null, journeyCallback, journeyCallback);
 }

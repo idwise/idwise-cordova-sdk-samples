@@ -1,0 +1,55 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<preference name=\"UseSwiftLanguageVersion\" value=\"4.2\" />",
+              "count": 1
+            },
+            {
+              "xml": "<preference name=\"deployment-target\" value=\"12.0\" />",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"IDWiseCordovaSDK\"><param name=\"ios-package\" value=\"IDWiseCordovaSDK\" /></feature>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "idwise-cordova-sdk": {
+      "PACKAGE_NAME": "com.idwise.cordova.simple.demo"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "idwise-cordova-sdk.IDWiseCordovaSDK",
+      "file": "plugins/idwise-cordova-sdk/www/IDWiseCordovaSDK.js",
+      "pluginId": "idwise-cordova-sdk",
+      "clobbers": [
+        "IDWise"
+      ]
+    },
+    {
+      "id": "idwise-cordova-sdk.IDWiseCordovaDynamicSDK",
+      "file": "plugins/idwise-cordova-sdk/www/IDWiseDynamicCordovaSDK.js",
+      "pluginId": "idwise-cordova-sdk",
+      "clobbers": [
+        "IDWiseDynamic"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "idwise-cordova-sdk": "4.6.9"
+  }
+}
